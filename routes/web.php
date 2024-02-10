@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/',[
+    SongController::class, 'index'
+]);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[
+    SongController::class, 'create'
+]);
+
+Route::post('/',[
+    SongController::class, 'store'
+]);
